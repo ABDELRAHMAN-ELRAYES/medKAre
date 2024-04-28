@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="/css/loginSignupStyle.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/loginSignupStyle.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="forms">
+            
+
+            <div class="sign-in-sign-up">
+                
+                <form class="sign-in-form" method="POST" >               
+                    {% csrf_token %}
+                    <h2 class="title">Sign in</h2>
+                    <!-- first text (user name)box in login -->
+                    <div class="input-field">
+                        <input type="text" placeholder="Username" id="login-username" name="login-username">
+                        <i class="fas fa-user"></i>
+                    </div>
+
+                    <!-- second text box (password) in login  -->
+                    <div class="input-field">
+                        <input type="password" placeholder="Password" id="login-pass" name="login-pass">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div>{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <input type="submit" value="LOGIN" id="login-btn" class="btn solid" >
+                    
+                    <p class="social-text">Or Sign in with social platforms</p>
+                    
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+
+
+
+                
+                <form class="sign-up-form"  action="{%url 'signup'%}" method="post">
+                    {% csrf_token %}
+                    <h2 class="title">Sign up</h2>     
+                    <div class="signup-full-sides">
+                        <div class="signup-left-side">
+                            <!-- first name -->
+                            <div class="input-field">
+                                <input type="text" placeholder="First Name" name="firstname" id="firstname" required >
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                                <!-- input proper username -->
+                            <div class="input-field">
+                                <input type="text" placeholder="Username" required name="username" id="username" required>
+                                <i class="fas fa-user"></i>
+                            </div>
+                        
+                        
+                                <!-- input proper email -->
+                            <div class="input-field">
+                                <input type="email" placeholder="Email" name="email" id="email" required>
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        
+                            <!--  text box (password) in signup  id="signup-pass"--> 
+                            <div class="input-field">
+                                <input type="password"  name="password" id="password" placeholder="Password" required>
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        
+                            <!--  text box (confirm password) in signup  id="signup-cnfrm"-->
+                            <div class="input-field">
+                                <input type="password"  placeholder="Confirm Password" name="cnfrmpassword" id="cnfrmpassword" required>
+                                <i class="fas fa-lock"></i>
+                            </div>
+                        
+                        </div>
+                        <div class="signup-right-side">
+                            <!-- last name -->
+                            <div class="input-field">
+                                <input type="text" placeholder="Last Name"  name="lastname" id="lastname" required>
+                                <i class="fa-solid fa-signature"></i>
+                            </div>
+                            <!-- input proper phone number -->
+                            <div class="input-field">
+                                <input type="text" placeholder="Phone" required  name="phone" id="phone" required>
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+        
+                                <!-- input proper Location -->
+                            <div class="input-field">
+                                <input type="text" placeholder="Address" required  name="location" id="location" required>
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+        
+                            <!-- input proper Gender -->
+                            <div class="input-field">
+                                <input type="text" placeholder="Gender" required  name="gender" id="gender" required>
+                                <i class="fa-solid fa-person-half-dress"></i>
+                            </div>
+        
+                                <!-- input proper birth date -->
+                            <div class="input-field exp">
+                                <input type="date"  name="date" i="date" placeholder="Select the date" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="signup-message"></p>
+
+
+                    <!-- {{ signup_form.as_p }} -->
+                    <button type="submit" class="btn solid" id="signup-btn" >SIGN UP</button>
+                    <!-- <input type="submit" value="SIGN UP" class="btn solid" id="signup-btn" > -->
+                    <p class="social-text">Or Sign up with social platforms</p>
+                    
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+        <div class="panels">
+            <div class="panel left-panel">
+                <div class="content">
+                    <div class="logo">
+                        <i class="fa-solid fa-capsules"></i>
+                        <h2>med <span>KA</span>re</h2>
+                    </div>
+                    <p>Empowering you to take control of your health and well-being.<br>Your journey to wellness begins here.</p>
+                    <button class="btn transparent" id="sign-up-btn">Sign up</button>
+                </div>
+                <img src="{%static '/images/medicine.svg'%}" class="image" alt="error">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h2>One of Us ?</h2>
+                    <p>Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.</p>
+                    <button class="btn transparent" id="sign-in-btn">Sign in</button>
+                </div>
+                <img src="{%static '/images/signup.svg'%}" class="image" alt="error">
+            </div>
+        </div>
+
+
+        
+    </div>
+    <!-- <script src="/js/loginlogout.js"></script> -->
+    <script src="{%static '/js/loginlogout.js'%}"></script>
+</body>
+</html>

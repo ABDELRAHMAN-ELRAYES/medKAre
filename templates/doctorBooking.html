@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Doctor</title>
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="/css/doctorBooking.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+
+
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/doctorBooking.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+
+
+</head>
+<body>
+    
+    <div class="container">
+            <div class="header">
+                <div class="mid-header">
+                        <div class="logo">
+                            <i class="fa-solid fa-capsules"></i>
+                            <h2>Med <span>KA</span>re</h2>
+                        </div>
+                        <div class="nav-bar">
+                            <ul class="main-list">
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id%}">Home</a></li>
+                                <li class="main-list-el"><a href="{%url 'aboutus' user.user_id%}">About us</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Booking</span>
+                                        <i class="fa-solid fa-angle-down">
+                                        </i>
+                                    </a>
+                                    <ul class="inner-list" >
+                                        <li><a href="{%url 'doctorbooking' user.user_id%}">Doctor</a></li>
+                                        <li><a href="{%url 'nursebooking' user.user_id%}">Home Stead</a></li>
+                                        <li><a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id%}#news-blogs">News &amp Blogs</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Section</span>
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </a>
+                                    <ul class="inner-list">
+                                        <li><a href="{%url 'books' user.user_id%}">Books</a></li>
+                                        <li><a href="{%url 'videos' user.user_id%}">Videos</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'treatment' user.user_id%}">Treatment</a></li>
+                                <li class="main-list-el"><a href="{%url 'contactus' user.user_id%}">Contact Us</a></li>
+                                <li class="main-list-el"><a href="{%url 'profile' user.user_id%}">
+                                    <span>Profile </span>
+                                    <i class="fa-solid fa-user"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                </div>            
+            </div>
+            <div class="doctor-book">
+                <h1>Book an Appointment</h1>
+                <p>We're a passionate team dedicated to making quality healthcare accessible and transparent.<br>
+                    Your health journey starts here...
+                </p>
+                <div class="home-div">
+                    <a href="{%url 'index2' user.user_id%}">Home</a>
+                    <span>-</span>
+                    <a href="{%url 'doctorbooking' user.user_id%}">Book a Doctor</a>
+                </div>
+            </div>
+    </div>
+    <div class="doctor-book-main">
+        <div class="mid-doctor-book-main">
+            <div class="info-side">
+                <div class="first-sen">Book With Us Now</div>
+                <div class="second-sen">Get an Appointment</div>
+                <form action="" method="post" class="input-div">
+                    {% csrf_token %}
+                    <div class="full-name">
+                        <div class="info-div">
+                            <input type="text" id="first-name" placeholder="First name:" name="firstname">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="info-div">
+                            <input type="text" id="last-name" placeholder="Last name:" name="lastname">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </div>
+                        <div class="info-div">
+                            <input type="email" id="email" placeholder="Email address:" name="email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="info-div">
+                            <input type="text" id="phone" placeholder="Phone number:" name="phone">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div class="info-div">
+                            <input type="" id="drop-list" placeholder="Gender:" name="gender">
+                            <i class="fa-solid fa-person-half-dress"></i>
+                        </div>
+                        <div class="info-div" id="date-div" >
+                            <input type="date" id="date" name="date" placeholder="Select the date">
+                        </div>
+                        <div class="info-div" id="time-div" >
+                            <input type="time" name="time" id="time">
+                            <!-- <input type="text" id="age" placeholder="Age:" name="age"> -->
+                        </div>
+                        <div class="doctor-specialty">
+                            <div class="wrapper wrapper1">
+                                <div class="select-btn select-btn1">
+                                    <span>Select Doctor</span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                                <div class="content content1">
+                                    <div class="search search1">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input class="input1" spellcheck="false" type="text" placeholder="Search">
+                                    </div>
+                                    <ul class="options options1"></ul>
+                                </div>
+                            </div>
+                            <div class="wrapper wrapper2">
+                                <div class="select-btn select-btn2">
+                                    <span>Select Specialty</span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+                                <div class="content content2">
+                                    <div class="search search2">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                        <input class="input2" spellcheck="false" type="text" placeholder="Search">
+                                    </div>
+                                    <ul class="options options2"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    <textarea cols="40" rows="10" aria-invalid="false" placeholder="Describe Your illness" name="message"></textarea>
+                    <button type="submit">Send Now</button>
+                </form>
+            </div>
+            <div class="img-side">
+                <img src="{%static '/images/doctorBooking.svg'%}" alt="">
+            </div>
+        </div>
+        <h1>Our Team</h1>
+        <div class="lower-side-profiles">
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse1"></div>
+                </div>
+                <a href="{%url 'doctor1' user.user_id%}"><h2>Dr. Steven Kerry</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse2"></div>
+                </div>
+                <a href="{%url 'doctor2' user.user_id%}"><h2>Dr. Santiago Lopez</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile ">
+                    <div class="img-doctor-profile nurse3"></div>
+                </div>
+                <a href="{%url 'doctor3' user.user_id%}"><h2>Dr. Maria Rodriguez</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse4"></div>
+                </div>
+                <a href="{%url 'doctor4' user.user_id%}"><h2>Dr. Elena Petrova</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse5"></div>
+                </div>
+                <a href="{%url 'doctor5' user.user_id%}"><h2>Dr. Pavel Novak</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse6"></div>
+                </div>
+                <a href="{%url 'doctor6' user.user_id%}"><h2>Dr. Youssef Ibrahim</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse7"></div>
+                </div>
+                <a href="{%url 'doctor7' user.user_id%}"><h2>Dr. Priya Patel</h2></a>
+            </div>
+            <div class="doctor-profile">
+                <div class="inner-doctor-profile">
+                    <div class="img-doctor-profile nurse8"></div>
+                </div>
+                <a href="{%url 'doctor8' user.user_id%}"><h2>Dr. Sofia Costa</h2></a>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="mid-footer">
+            <div class="footer-logo">
+                <div class="logo">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h2>Med <span>KA</span>re</h2>
+                </div>
+                <div class="about-us">
+                    Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-summary">
+                
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div class="footer-sort">
+                    <div class="left-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}">Home</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'aboutus' user.user_id%}">About Us</a>
+                        </div>
+                        <div class="book-link">
+                            <h4>Booking</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'doctorbooking' user.user_id%}">Doctor</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'nursebooking' user.user_id%}">Nurse</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'treatment' user.user_id%}">Treatment</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}#news-blogs">News & Blogs</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'contactus' user.user_id%}">Contact Us</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'profile' user.user_id%}">Profile</a>
+                        </div>
+                        <div class="section-link">
+                            <h4>Section</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'books' user.user_id%}">Books</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'videos' user.user_id%}">Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <div class="div-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+613 8376 6284</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>Info@medunit.com</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>21 King Street Melbourne,  3000, Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <script src="/js/doctorbooking.js"></script>-->
+    <script src="{%static '/js/doctorbooking.js'%}"></script>
+</body>
+</html>

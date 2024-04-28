@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="../css/nursesProfilesStyle/nurse3.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+
+
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/nursesProfilesStyle/nurse3.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <div class="mid-header">
+                    <div class="logo">
+                        <i class="fa-solid fa-capsules"></i>
+                        <h2>Med <span>KA</span>re</h2>
+                    </div>
+                    <div class="nav-bar">
+                        <ul class="main-list">
+                            <li class="main-list-el"><a href="{%url 'index2' user.user_id%}">Home</a></li>
+                            <li class="main-list-el"><a href="{%url 'aboutus' user.user_id%}">About us</a></li>
+                            <li class="main-list-li">
+                                <a href=""><span>Booking</span>
+                                    <i class="fa-solid fa-angle-down">
+                                    </i>
+                                </a>
+                                <ul class="inner-list" >
+                                    <li><a href="{%url 'doctorbooking' user.user_id%}">Doctor</a></li>
+                                    <li><a href="{%url 'nursebooking' user.user_id%}">Home Stead</a></li>
+                                    <li><a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-list-el"><a href="{%url 'index2' user.user_id%}#news-blogs">News &amp Blogs</a></li>
+                            <li class="main-list-li">
+                                <a href=""><span>Section</span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </a>
+                                <ul class="inner-list">
+                                    <li><a href="{%url 'books' user.user_id%}">Books</a></li>
+                                    <li><a href="{%url 'videos' user.user_id%}">Videos</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-list-el"><a href="{%url 'treatment' user.user_id%}">Treatment</a></li>
+                            <li class="main-list-el"><a href="{%url 'contactus' user.user_id%}">Contact Us</a></li>
+                            <li class="main-list-el"><a href="{%url 'profile' user.user_id%}">
+                                <span>Profile </span>
+                                <i class="fa-solid fa-user"></i>
+                            </a></li>
+                        </ul>
+                    </div>
+            </div>            
+        </div>
+        <div class="profile">
+            <h1>Profile</h1>
+            <p>We're a passionate team dedicated to making quality healthcare accessible and transparent.<br>
+                Your health journey starts here...
+            </p>
+            <div class="home-div">
+                <a href="{%url 'index2' user.user_id%}">Home</a>
+                <span> - </span>
+                <a href="{%url 'nurse3' user.user_id%}">Profile</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="profile-main">
+        <div class="mid-profile">
+            <div class="left-side">
+                <div class="left-side-img">
+
+                </div>
+                <div class="left-side-info">
+                    <div class="contact-info">
+                        <h1>Contact info</h1>
+                        <div class="div-contact">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>+613 8376 6284</div>
+                        </div>
+                        <div class="div-contact">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>Info@medunit.com</div>
+                        </div>
+                        <div class="div-contact">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>21 King Street Melbourne,  3000, Canada</div>
+                        </div>
+                        <div class="profile-social-media">
+                            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="working-hours">
+                        <h1>Working hours</h1>
+                        <ul class="time-schedual">
+                            <li class="day">Monday - Fridayp 
+                                <span>8.00-20.00</span>
+                            </li>
+                            <li class="day">Saturday 
+                                <span>9.00-18.30</span>
+                            </li>
+                            <li class="day">Monday - Thusday 
+                                <span>9.00-15.00</span>
+                            </li>
+                            <li class="day">Monday - Fridayp 
+                                <span>8.00-20.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <h1>Anna Schmidt</h1>
+                <h2>Neurosurgeon.</h2>
+                <h3>MBBS in Neurology, PHD in Neurosurgeon.</h3>
+                <h2>Biography</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. 
+                    Risus commodo viverra maecenas accumsan lacus vel facilisis.Lorem ipsum dolor sit amet, 
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    <p>
+                        Risus commodo viverra maecenas accumsan lacus vel facilisis.Lorem ipsum dolor sit amet, 
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    </p>
+                <h2>Education</h2>
+                <p>PHD degree in Neorology at University of Mediserv (2006)</p>
+                <p>Master of Neoro Surgery at University of Mediserv (2002)</p>
+                <p>MBBS degree in Neurosciences at University of Mediserv (2002)</p>
+                <p>Higher Secondary Certificate at Mediserv collage (1991)</p>
+                <h2>Biography</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                    labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt consectetur 
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum 
+                    suspendisse ultrices gravida. Risus commodo viverra eiusmod tempor incididunt ut labore et dolore magna.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="footer">
+        <div class="mid-footer">
+            <div class="footer-logo">
+                <div class="logo">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h2>Med <span>KA</span>re</h2>
+                </div>
+                <div class="about-us">
+                    Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-summary">
+                
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div class="footer-sort">
+                    <div class="left-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}">Home</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'aboutus' user.user_id%}">About Us</a>
+                        </div>
+                        <div class="book-link">
+                            <h4>Booking</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'doctorbooking' user.user_id%}">Doctor</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'nursebooking' user.user_id%}">Nurse</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'treatment' user.user_id%}">Treatment</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}#news-blogs">News & Blogs</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'contactus' user.user_id%}">Contact Us</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'profile' user.user_id%}">Profile</a>
+                        </div>
+                        <div class="section-link">
+                            <h4>Section</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'books' user.user_id%}">Books</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'videos' user.user_id%}">Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <div class="div-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+613 8376 6284</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>Info@medunit.com</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>21 King Street Melbourne,  3000, Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <script src="/js/script.js"></script> -->
+</body>
+</html>

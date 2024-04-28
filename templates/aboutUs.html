@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    
+    
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="/css/aboutUs.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/aboutUs.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+    
+</head>
+<body>
+    
+    <div class="container">
+            <div class="header">
+                <div class="mid-header">
+                        <div class="logo">
+                            <i class="fa-solid fa-capsules"></i>
+                            <h2>Med <span>KA</span>re</h2>
+                        </div>
+                        <div class="nav-bar">
+                            <ul class="main-list">
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id%}">Home</a></li>
+                                <li class="main-list-el"><a href="{%url 'aboutus' user.user_id%}">About us</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Booking</span>
+                                        <i class="fa-solid fa-angle-down">
+                                        </i>
+                                    </a>
+                                    <ul class="inner-list" >
+                                        <li><a href="{%url 'doctorbooking' user.user_id%}">Doctor</a></li>
+                                        <li><a href="{%url 'nursebooking' user.user_id%}">Home Stead</a></li>
+                                        <li><a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id%}#news-blogs">News &amp Blogs</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Section</span>
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </a>
+                                    <ul class="inner-list">
+                                        <li><a href="{%url 'books' user.user_id%}">Books</a></li>
+                                        <li><a href="{%url 'videos' user.user_id%}">Videos</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'treatment' user.user_id%}">Treatment</a></li>
+                                <li class="main-list-el"><a href="{%url 'contactus' user.user_id%}">Contact Us</a></li>
+                                <li class="main-list-el"><a href="{%url 'profile' user.user_id%}">
+                                    <span>Profile </span>
+                                    <i class="fa-solid fa-user"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                </div>            
+            </div>
+            <div class="about-us">
+                <h1>About us</h1>
+                <p>We're a passionate team dedicated to making quality healthcare accessible and transparent.<br>
+                    Your health journey starts here...
+                </p>
+                <div class="home-div">
+                    <a href="{%url 'index2' user.user_id%}">Home</a>
+                    <span>-</span>
+                    <a href="{%url 'aboutus' user.user_id%}">About us</a>
+                </div>
+            </div>
+    </div>
+    <div class="description">
+        <div class="content">
+            <div class="image-side">
+                <!-- <img src="/images/About-img.jpg" alt=""> -->
+            </div>
+            <div class="center-text-side">
+                <div class="text-side">
+                    <div class="about-word">About us</div>
+                    <h2>Empowering Your Health Journey</h2>
+                    <p class="par1">We are dedicated to providing a comprehensive online platform for managing your health and well-being.</p>
+                    <p class="par2">We cater to individuals seeking convenient access to healthcare services, informative resources, and tools for self-care.</p>
+                    <div class="main-obj">
+                        <div class="inner-main-obj">
+                            <div class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Booking a Doctor or a nurse (home stead) appointment with real-time availability.</span>
+                        </div>
+                        <div class="inner-main-obj">
+                            <div class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Searchable directory of home healthcare providers and sanatoriums.</span>
+                        </div>
+                        <div class="inner-main-obj">
+                            <div class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Informative health articles focused on mental health, addiction recovery, and psychological diseases.</span>
+                        </div>
+                        <div class="inner-main-obj">
+                            <div class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Curated collection of recommended books and videos on healthcare topics.</span>
+                        </div>
+                        <div class="inner-main-obj">
+                            <div class="icon">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span>Personalized medicine tracker for daily medication reminders.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="third-comp">
+        <div class="inner-comp">
+            <div class="icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Our Mission</h3>
+            <p>Seamless Booking &emp Resources: We offer a one-stop platform for booking appointments, finding reliable health information, and managing your well-being.<br>
+                Focus on Mental Health: We prioritize mental health by providing resources and support for recovery and overall well-being.</p>
+        </div>
+        <div class="inner-comp">
+            <div class="icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Our Planning</h3>
+            <p>Support Groups: Building an online forum for users to connect and find encouragement, especially for mental health and recovery.<br>
+                Tech Integration: Exploring ways to connect with health devices, giving users a more complete picture of their health.</p>
+        </div>
+        <div class="inner-comp">
+            <div class="icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Our Vision</h3>
+            <p>Simplified Healthcare: We envision a future where managing your health is accessible and convenient.<br>
+                Empowerment Through Knowledge: We believe knowledge is key, and strive to empower individuals on their healthcare journeys.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="mid-footer">
+            <div class="footer-logo">
+                <div class="logo">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h2>Med <span>KA</span>re</h2>
+                </div>
+                <div class="about-us">
+                    Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-summary">
+                
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div class="footer-sort">
+                    <div class="left-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}">Home</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'aboutus' user.user_id%}">About Us</a>
+                        </div>
+                        <div class="book-link">
+                            <h4>Booking</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'doctorbooking' user.user_id%}">Doctor</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'nursebooking' user.user_id%}">Nurse</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'treatment' user.user_id%}">Treatment</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}#news-blogs">News & Blogs</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'contactus' user.user_id%}">Contact Us</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'profile' user.user_id%}">Profile</a>
+                        </div>
+                        <div class="section-link">
+                            <h4>Section</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'books' user.user_id%}">Books</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'videos' user.user_id%}">Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <div class="div-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+613 8376 6284</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>Info@medunit.com</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>21 King Street Melbourne,  3000, Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/js/script.js"></script> -->
+</body>
+</html>

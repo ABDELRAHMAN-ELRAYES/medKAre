@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="/css/blogsStyle/blog8.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+
+
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/blogsStyle/blog8.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+</head>
+<body>
+    
+    
+
+    <div class="container">
+        <div class="header">
+            <div class="mid-header">
+                    <div class="logo">
+                        <i class="fa-solid fa-capsules"></i>
+                        <h2>Med <span>KA</span>re</h2>
+                    </div>
+                    <div class="nav-bar">
+                        <ul class="main-list">
+                            <li class="main-list-el"><a href="{%url 'index2' user.user_id%}">Home</a></li>
+                            <li class="main-list-el"><a href="{%url 'aboutus' user.user_id%}">About us</a></li>
+                            <li class="main-list-li">
+                                <a href=""><span>Booking</span>
+                                    <i class="fa-solid fa-angle-down">
+                                    </i>
+                                </a>
+                                <ul class="inner-list" >
+                                    <li><a href="{%url 'doctorbooking' user.user_id%}">Doctor</a></li>
+                                    <li><a href="{%url 'nursebooking' user.user_id%}">Home Stead</a></li>
+                                    <li><a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-list-el"><a href="{%url 'index2' user.user_id%}#news-blogs">News &amp Blogs</a></li>
+                            <li class="main-list-li">
+                                <a href=""><span>Section</span>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </a>
+                                <ul class="inner-list">
+                                    <li><a href="{%url 'books' user.user_id%}">Books</a></li>
+                                    <li><a href="{%url 'videos' user.user_id%}">Videos</a></li>
+                                </ul>
+                            </li>
+                            <li class="main-list-el"><a href="{%url 'treatment' user.user_id%}">Treatment</a></li>
+                            <li class="main-list-el"><a href="{%url 'contactus' user.user_id%}">Contact Us</a></li>
+                            <li class="main-list-el"><a href="{%url 'profile' user.user_id%}">
+                                <span>Profile </span>
+                                <i class="fa-solid fa-user"></i>
+                            </a></li>
+                        </ul>
+                    </div>
+            </div>            
+        </div>
+        <div class="blog">
+            <h1>Psychiatry vs. Psychology:<br> Understanding the Differences</h1>
+            <p>We're a passionate team dedicated to making quality healthcare accessible and transparent.<br>
+                Your health journey starts here...
+            </p>
+            <div class="home-div">
+                <a href="{%url 'index2' user.user_id%}">Home</a>
+                <span> - </span>
+                <a href="{%url 'blog8' user.user_id%}">Blog</a>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="blog-main">
+        <div class="mid-blog">
+            <div class="left-side-blog">
+                <div class="img-div"></div>
+                <div class="blog-content">
+                    <h2>Psychiatry vs. Psychology: Understanding the Differences</h2>
+                    <p>
+                        The fields of psychiatry and psychology are integral components of mental health care,
+                        each contributing distinct perspectives and approaches to understanding and treating 
+                        psychological issues. While these professions share a common goal of improving mental well-being,
+                        they differ significantly in terms of education, training, and the nature of their interventions.
+                        This essay delves into the disparities between psychiatry and psychology, shedding light on their
+                        unique roles in the mental health landscape.
+                    </p>
+                    <h1>Psychiatry: The Medical Perspective</h1>
+                    <ol>
+                        <li><span>Medical Training:</span> Psychiatry is a medical specialty, and psychiatrists are medical doctors (MDs)
+                            or doctors of osteopathic medicine (DOs). They undergo extensive medical training, including general 
+                            medical education followed by specialized training in psychiatry. This education equips them to 
+                            understand the biological aspects of mental health and diagnose and treat mental illnesses using 
+                            a medical framework.
+                        </li>
+                        <li><span>Prescribing Medications:</span> One of the primary distinctions is the ability of psychiatrists to
+                            prescribe medication. Psychiatrists, as medical doctors, can utilize psychotropic medications to manage
+                            mental health conditions. This includes antidepressants, antipsychotics, mood stabilizers, and other 
+                            medications that directly impact brain chemistry.
+                        </li>
+                        <li><span>Medical Interventions:</span> In addition to prescribing medications, psychiatrists may recommend 
+                            and administer other medical interventions, such as electroconvulsive therapy (ECT) and transcranial 
+                            magnetic stimulation (TMS), for certain conditions.
+                        </li>
+                        <li><span>Holistic Approach:</span> While psychiatrists focus on the biological aspects of mental health, 
+                            many adopt a holistic approach that considers psychosocial factors. Some psychiatrists engage in psychotherapy 
+                            alongside medication management, fostering a comprehensive treatment plan.
+                        </li>
+                    </ol>
+                    <h1>Psychology: The Behavioral Perspective</h1>
+                    <ol>
+                        <li><span>Education and Training:</span> Psychologists earn doctoral degrees (Ph.D. or Psy.D.) in psychology, 
+                            focusing on understanding behavior, emotions, and mental processes. Their education includes extensive training 
+                            in psychological assessment, research methodologies, and therapeutic techniques.
+                        </li>
+                        <li><span>Psychotherapy: </span>Psychologists are experts in psychotherapy and counseling. They use various therapeutic 
+                            approaches, such as cognitive-behavioral therapy (CBT), psychodynamic therapy, and humanistic therapy, to address 
+                            psychological issues. Psychologists do not prescribe medication but may collaborate with psychiatrists when medication 
+                            is part of the treatment plan.
+                        </li>
+                        <li><span>Assessment and Testing:</span> Psychologists are skilled in conducting psychological assessments and tests to 
+                            diagnose and understand mental health conditions. This includes intelligence testing, personality assessments, and 
+                            evaluations for specific psychological disorders.
+                        </li>
+                        <li><span>Research and Academic Roles:</span> Psychologists often engage in research to contribute to the understanding 
+                            of human behavior and mental processes. They may also work in academic settings, teaching and mentoring students, and 
+                            contributing to the advancement of psychological knowledge.
+                        </li>
+                    </ol>
+                    <h1>Collaboration and Complementary Roles:</h1>
+                    <ol>
+                        <li><span>Interdisciplinary Collaboration:</span> Psychiatrists and psychologists often collaborate to provide comprehensive 
+                            mental health care. The combination of psychiatric medication management and psychological interventions can be particularly 
+                            effective for many individuals.
+                        </li>
+                        <li><span>Shared Treatment Goals:</span> While their approaches differ, both professions share common treatment goals—improving 
+                            mental health, alleviating distress, and enhancing overall well-being. The collaboration between psychiatry and psychology 
+                            underscores the holistic nature of mental health care.
+                        </li>
+                        <li><span>Client-Centered Care:</span> The choice between psychiatry and psychology often depends on the individual’s preferences, 
+                            the nature of their mental health concerns, and the recommended treatment plan. Client-centered care involves tailoring 
+                            interventions to meet the unique needs and preferences of the individual.
+                        </li>
+                    </ol>
+                    <h1>Conclusion</h1>
+                    <p>In navigating the realms of psychiatry and psychology, understanding the distinctions between these professions is crucial. Psychiatry, 
+                        with its foundation in medicine, emphasizes the biological aspects of mental health and includes the prescription of medications. 
+                        Psychology, on the other hand, focuses on the behavioral and psychological aspects, utilizing various therapeutic approaches and 
+                        assessments. Together, psychiatrists and psychologists contribute to a comprehensive and integrative approach to mental health care, 
+                        reflecting the collaborative nature of the field and the commitment to enhancing the well-being of individuals facing mental health challenges.
+                    </p>
+                </div>
+            </div>
+            <div class="right-side-blog">
+                <div class="blog-posts">
+                    <h2>Recent Posts</h2>
+                    <div class="inner-blog-posts">
+                        <ul>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                            <li><a href="">The Role of Nutrition in Supporting Dental Health</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-writer">
+                    <h2>Writer</h2>
+                    <div class="blog-writer-info">
+                        <i class="fa-solid fa-user"></i>
+                        <span> administrator</span>
+                    </div>
+                    <div class="blog-date">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>December 19, 2023</span>
+                    </div>
+                </div>
+                <div class="blog-category">
+                    <h2>Categories</h2>
+                    <ul>
+                        <li>Pyschological Diseases</li>
+                        <li>Addiction</li>
+                        <li>Mental Health</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="footer">
+        <div class="mid-footer">
+            <div class="footer-logo">
+                <div class="logo">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h2>Med <span>KA</span>re</h2>
+                </div>
+                <div class="about-us">
+                    Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-summary">
+                
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div class="footer-sort">
+                    <div class="left-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}">Home</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'aboutus' user.user_id%}">About Us</a>
+                        </div>
+                        <div class="book-link">
+                            <h4>Booking</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'doctorbooking' user.user_id%}">Doctor</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'nursebooking' user.user_id%}">Nurse</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'treatment' user.user_id%}">Treatment</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}#news-blogs">News & Blogs</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'contactus' user.user_id%}">Contact Us</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'profile' user.user_id%}">Profile</a>
+                        </div>
+                        <div class="section-link">
+                            <h4>Section</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'books' user.user_id%}">Books</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'videos' user.user_id%}">Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <div class="div-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+613 8376 6284</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>Info@medunit.com</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>21 King Street Melbourne,  3000, Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="/js/script.js"></script> -->
+</body>
+</html>

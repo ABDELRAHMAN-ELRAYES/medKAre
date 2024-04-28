@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>med KAre</title>
+    <!-- <link rel="shortcut icon" type="x-icon" href="/images/tab-icon.png">
+    <link href="/css/index.css" rel="stylesheet"/>
+    <link href="/css/all.min.css" rel="stylesheet"/>
+    <link href="/css/normalize.css" rel="stylesheet"/> -->
+
+
+    {%load static%}
+    <link rel="shortcut icon" type="x-icon" href="{%static '/images/tab-icon.png'%}">
+    <link href="{%static '/css/index.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/all.min.css'%}" rel="stylesheet"/>
+    <link href="{%static '/css/normalize.css'%}" rel="stylesheet"/>
+
+    <!-- Swiper CSS -->
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
+
+    <link href="{%static '/css/swiper-bundle.min.css'%}" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <div class="header">
+                <div class="mid-header">
+                        <div class="logo">
+                            <i class="fa-solid fa-capsules"></i>
+                            <h2>Med <span>KA</span>re</h2>
+                        </div>
+                        <div class="nav-bar">
+                            <ul class="main-list">
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id%}">Home</a></li>
+                                <li class="main-list-el"><a href="{%url 'aboutus' user.user_id%}">About us</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Booking</span>
+                                        <i class="fa-solid fa-angle-down">
+                                        </i>
+                                    </a>
+                                    <ul class="inner-list" >
+                                        <li><a href="{%url 'doctorbooking' user.user_id%}">Doctor</a></li>
+                                        <li><a href="{%url 'nursebooking' user.user_id%}">Home Stead</a></li>
+                                        <li><a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'index2' user.user_id %}#news-blogs">News &amp Blogs</a></li>
+                                <li class="main-list-li">
+                                    <a href=""><span>Section</span>
+                                        <i class="fa-solid fa-angle-down"></i>
+                                    </a>
+                                    <ul class="inner-list">
+                                        <li><a href="{%url 'books' user.user_id%}">Books</a></li>
+                                        <li><a href="{%url 'videos' user.user_id%}">Videos</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-list-el"><a href="{%url 'treatment' user.user_id%}">Treatment</a></li>
+                                <li class="main-list-el"><a href="{%url 'contactus' user.user_id%}">Contact Us</a></li>
+                                <li class="main-list-el"><a href="{%url 'profile' user.user_id%}">
+                                    <span>Profile </span>
+                                    <i class="fa-solid fa-user"></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                </div>            
+            </div>
+            <div class="home">
+                <div class="home-center">
+
+                    <div class="home-intro">
+                        <div class="home-intro-first">Perfect Solution for Your Health Care</div>
+                        <h2  class="home-intro-second">We Will Help You to Understand More  about Your Health Care & Contact You with the Professional Doctors You Will Need </h2>
+                        <div class="home-intro-third">we are committed to providing you with the highest quality of care and information.
+                            Our team of dedicated healthcare professionals is here to support you on your journey to better health.</div>
+                        <form action="{%url 'aboutus' user.user_id%}">
+                            <button class="about-us-btn" href="{%url 'aboutus' user.user_id%}">
+                                <span>Read More</span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="home-images">
+                        <div class="left-image">
+                            <img src="{%static '/images/home-left.jpg'%}" alt="">
+                        </div>
+                        <div class="right-image">
+                            <div class="right-top-image">
+                                <img src="{%static '/images/home-right-top.jpg'%}" alt="">
+                            </div>
+                            <div class="right-bottom-image">
+                                <img src="{%static '/images/home-right-bottom.jpg'%}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="news-blogs " id="news-blogs">
+    <div class="news-header">
+        <h1>Latest News & Blogs</h1>
+    </div>
+    <div class="container-news swiper">
+        <div class="slide-container">
+            <div class="card-wrapper swiper-wrapper">
+
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog1' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog2' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog3' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog4' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog5' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                            <div class="date">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                                <a href="{%url 'blog6' user.user_id%}">Read More</a>
+                                <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+
+                <div class="card swiper-slide">
+                    <div class="img-box">
+                        <img src="{%static '/images/home-left.jpg'%}" alt="">
+                    </div>
+                    <div class="info-box">
+                        <div class="date">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            Feb 9, 2005
+                        </div>
+                        <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                        <p>In the realm of mental health treatment, psychotherapy…</p>
+                        <div class="inner-card">
+                            <a href="{%url 'blog7' user.user_id%}">Read More</a>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="img-box">
+                            <img src="{%static '/images/home-left.jpg'%}" alt="">
+                        </div>
+                        <div class="info-box">
+                                <div class="date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    Feb 9, 2005
+                            </div>
+                            <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                            <p>In the realm of mental health treatment, psychotherapy…</p>
+                            <div class="inner-card">
+                                    <a href="{%url 'blog8' user.user_id%}">Read More</a>
+                                    <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="img-box">
+                            <img src="{%static '/images/home-left.jpg'%}" alt="">
+                        </div>
+                        <div class="info-box">
+                                <div class="date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    Feb 9, 2005
+                            </div>
+                            <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                            <p>In the realm of mental health treatment, psychotherapy…</p>
+                            <div class="inner-card">
+                                    <a href="{%url 'blog9' user.user_id%}">Read More</a>
+                                    <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card swiper-slide">
+                        <div class="img-box">
+                            <img src="{%static '/images/home-left.jpg'%}" alt="">
+                        </div>
+                        <div class="info-box">
+                                <div class="date">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    Feb 9, 2005
+                            </div>
+                            <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+                            <p>In the realm of mental health treatment, psychotherapy…</p>
+                            <div class="inner-card">
+                                    <a href="{%url 'blog10' user.user_id%}">Read More</a>
+                                    <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+        </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+    </div>
+    
+    <div class="news-slider-show">
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<!-- <div class="mid-news-blogs">
+    <div class="card">
+        <div class="img-box">
+            <img src="/images/home-left.jpg" alt="">
+        </div>
+        <div class="info-box">
+            <div class="date">
+                <i class="fa-solid fa-calendar-days"></i>
+                Feb 9, 2005
+            </div>
+            <h5>The Role of Psychotherapy in Mental Health Treatment</h5>
+            <p>In the realm of mental health treatment, psychotherapy…</p>
+            <div class="inner-card">
+                <a href="">Read More</a>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+        
+    </div>
+
+</div> -->
+
+    <div class="footer">
+        <div class="mid-footer">
+            <div class="footer-logo">
+                <div class="logo">
+                    <i class="fa-solid fa-capsules"></i>
+                    <h2>Med <span>KA</span>re</h2>
+                </div>
+                <div class="about-us">
+                    Welcome to our health care platform, where we provide comprehensive resources and support to guide you on your path to optimal health and wellness.
+                </div>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-summary">
+                
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <div class="footer-sort">
+                    <div class="left-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}">Home</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'aboutus' user.user_id%}">About Us</a>
+                        </div>
+                        <div class="book-link">
+                            <h4>Booking</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'doctorbooking' user.user_id%}">Doctor</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'nursebooking' user.user_id%}">Nurse</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'sanatoriumbooking' user.user_id%}">Sanatorium</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-footer-links">
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'treatment' user.user_id%}">Treatment</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'index2' user.user_id%}#news-blogs">News & Blogs</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'contactus' user.user_id%}">Contact Us</a>
+                        </div>
+                        <div class="div-link">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <a href="{%url 'profile' user.user_id%}">Profile</a>
+                        </div>
+                        <div class="section-link">
+                            <h4>Section</h4>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'books' user.user_id%}">Books</a>
+                            </div>
+                            <div class="div-link">
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="{%url 'videos' user.user_id%}">Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <div class="div-contact">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>+613 8376 6284</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>Info@medunit.com</div>
+                </div>
+                <div class="div-contact">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>21 King Street Melbourne,  3000, Canada</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script> -->
+    <script src="{%static '/js/swiper-bundle.min.js'%}"></script>
+    <script src="{%static '/js/script.js'%}"></script>
+</body>
+</html>
