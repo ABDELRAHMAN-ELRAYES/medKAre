@@ -418,14 +418,17 @@ a{
 .inner-info-side .img-div{
     height: 100%;
 }
-
+.right-profile-side{
+    height:100%;
+}
 .info-side .input-div{
     height: 400px;
     display: grid;
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(8,1fr);
     align-content: space-between;
     border-radius: 30px;
-    row-gap:8px
+    row-gap:8px;
+    height: 80%;
 }
 .info-side .input-div .info-div{
     width:100%;

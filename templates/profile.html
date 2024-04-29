@@ -101,6 +101,14 @@
                                     <i class="fa-solid fa-person-half-dress"></i>
                                 </div>
                                 <div class="info-div">
+                                    <input type="text" id="username" placeholder="Username:" name="username" value="{{user.user_username}}" readonly>
+                                    <i class="fa-solid fa-signature"></i>
+                                </div>
+                                <div class="info-div">
+                                    <input type="text" id="address" placeholder="Address:" name="address" value="{{user.user_city}} {{user.user_street}}" readonly>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div class="info-div">
                                     <input type="text" id="birthDate" placeholder="Birth Date:" name="birth date" value="{{user.user_birthdate}}" readonly>
                                     <i class="fa-solid fa-calendar-days"></i>
                                 </div>
@@ -142,6 +150,17 @@
                                         <tr>
                                             <td>nurse</td>
                                             <td>{{appointment.nurse.nurse_fname}} {{appointment.nurse.nurse_lname}}</td>
+                                            <td>{{ appointment.illness_description }}</td>
+                                            <td>{{ appointment.appointment_date }}</td>
+                                            <td>{{ appointment.appointment_time }}</td>
+                                            <td>{{ appointment.appointment_status }}</td>
+                                            <td>{{ user.user_city }} {{ user.user_street }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    {% for appointment in sanatoriumappointments %}
+                                        <tr>
+                                            <td>sanatorium</td>
+                                            <td>{{appointment.sanatorium.sanatorium_name}}</td>
                                             <td>{{ appointment.illness_description }}</td>
                                             <td>{{ appointment.appointment_date }}</td>
                                             <td>{{ appointment.appointment_time }}</td>

@@ -467,9 +467,26 @@ input[type="date"]::-webkit-calendar-picker-popup {
     border: 1px solid #ccc; 
     border-radius: 4px;
 }
-#date-div{
+#date-div,#time-div{
     display: flex;
     padding-right: 18px;
+}
+
+input[type="time"]{
+    width: 100%;
+    color: #757575;   
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(20%);
+    color: #757575;
+}
+
+input[type="time"]::-webkit-calendar-picker-popup {
+    width: 250px; 
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
 }
 .doctor-specialty{
     display: grid;

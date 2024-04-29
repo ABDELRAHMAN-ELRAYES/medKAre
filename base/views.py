@@ -107,14 +107,25 @@ def nursebooking(request,user_id):
 
 def sanatoriumbooking(request,user_id):
     user = User.objects.get(user_id=user_id)
+    
+    if request.method == 'POST':
+        sanatorium_name = request.POST.get('sanatorium_name')
+        sanatorium=Sanatorium.objects.get(sanatorium_name=sanatorium_name.lower())
+        appointmentDate=request.POST['date']
+        appointmentTime=request.POST['time']
+        illnessDescription=request.POST['message']
+        appointment=SanatoriumAppointment(user=user,sanatorium=sanatorium,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        appointment.save()
+
     return render(request, 'sanatoriumBooking.html', {'user': user})
 
 def profile(request,user_id):
     user = User.objects.get(user_id=user_id)
     doctorappointments=DoctorAppointment.objects.filter(user=user).select_related('doctor')
     nurseappointments=NurseAppointment.objects.filter(user=user).select_related('nurse')
+    sanatoriumappointments=SanatoriumAppointment.objects.filter(user=user).select_related('sanatorium')
     messages=Message.objects.filter(user=user)
-    return render(request, 'profile.html', {'user': user, 'doctorappointments':doctorappointments,'messages':messages, 'nurseappointments':nurseappointments})
+    return render(request, 'profile.html', {'user': user, 'doctorappointments':doctorappointments,'messages':messages, 'nurseappointments':nurseappointments, 'sanatoriumappointments':sanatoriumappointments})
 
 def treatment(request,user_id):
     user = User.objects.get(user_id=user_id)

@@ -48,3 +48,15 @@ searchInp1.addEventListener("keyup", () => {
 
 selectBtn1.addEventListener("click", () => wrapper1.classList.toggle("active"));
 
+document.getElementById('booking-form').addEventListener('submit', function(event) {
+
+    let selectedDoctor = selectBtn1.firstElementChild.innerText.trim();
+
+    let hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'sanatorium_name';
+    hiddenInput.value = selectedDoctor;
+
+    this.appendChild(hiddenInput);
+});
+
