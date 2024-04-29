@@ -79,35 +79,35 @@
             <div class="info-side">
                 <div class="first-sen">Book With Us Now</div>
                 <div class="second-sen">Get an Appointment</div>
-                <form action="" method="post" class="input-div">
+                <form action="{%url 'doctorbooking' user.user_id %}" method="post" class="input-div" id="booking-form">
                     {% csrf_token %}
                     <div class="full-name">
                         <div class="info-div">
-                            <input type="text" id="first-name" placeholder="First name:" name="firstname">
+                            <input type="text" id="firstname" placeholder="First name:" name="firstname" required>
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="info-div">
-                            <input type="text" id="last-name" placeholder="Last name:" name="lastname">
+                            <input type="text" id="lastname" placeholder="Last name:" name="lastname" required>
                             <i class="fa-solid fa-user"></i>
                         </div>
                     </div>
                         <div class="info-div">
-                            <input type="email" id="email" placeholder="Email address:" name="email">
+                            <input type="email" id="email" placeholder="Email address:" name="email" required>
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div class="info-div">
-                            <input type="text" id="phone" placeholder="Phone number:" name="phone">
+                            <input type="text" id="phone" placeholder="Phone number:" name="phone" required>
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div class="info-div">
-                            <input type="" id="drop-list" placeholder="Gender:" name="gender">
+                            <input type="" id="gender" placeholder="Gender:" name="gender" required>
                             <i class="fa-solid fa-person-half-dress"></i>
                         </div>
                         <div class="info-div" id="date-div" >
-                            <input type="date" id="date" name="date" placeholder="Select the date">
+                            <input type="date" id="date" name="date" placeholder="Select the date" required>
                         </div>
                         <div class="info-div" id="time-div" >
-                            <input type="time" name="time" id="time">
+                            <input type="time" name="time" id="time" required>
                             <!-- <input type="text" id="age" placeholder="Age:" name="age"> -->
                         </div>
                         <div class="doctor-specialty">
@@ -126,7 +126,7 @@
                             </div>
                             <div class="wrapper wrapper2">
                                 <div class="select-btn select-btn2">
-                                    <span>Select Specialty</span>
+                                    <span id="doctor_specialty">Select Specialty</span>
                                     <i class="fa-solid fa-angle-down"></i>
                                 </div>
                                 <div class="content content2">
@@ -138,7 +138,7 @@
                                 </div>
                             </div>
                         </div>
-                    <textarea cols="40" rows="10" aria-invalid="false" placeholder="Describe Your illness" name="message"></textarea>
+                    <textarea cols="40" rows="10" aria-invalid="false" placeholder="Describe Your illness" name="description" id="description" required></textarea>
                     <button type="submit">Send Now</button>
                 </form>
             </div>

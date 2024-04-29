@@ -52,6 +52,27 @@ searchInp1.addEventListener("keyup", () => {
 selectBtn1.addEventListener("click", () => wrapper1.classList.toggle("active"));
 
 
+
+
+
+
+document.getElementById('booking-form').addEventListener('submit', function(event) {
+
+    let selectedDoctor = selectBtn1.firstElementChild.innerText.trim();
+
+    let hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'doctor_name';
+    hiddenInput.value = selectedDoctor;
+
+    this.appendChild(hiddenInput);
+});
+
+
+
+
+
+
 //second drop list (Specialties)
 const wrapper2 = document.querySelector(".wrapper2"),
 selectBtn2 = wrapper2.querySelector(".select-btn2"),
@@ -75,12 +96,11 @@ let specialties = [
 function addSpecialty(selectSpecialty) {
     options2.innerHTML = "";
     specialties.forEach(specialty => {
-        let isSelected = specialty == selectSpecialty ? "selected" : "";
-        let li = `<li onclick="updateName(this)" class="${isSelected}">${specialty}</li>`;
+        let isSelected = specialty === selectSpecialty ? "selected" : "";
+        let li = `<li onclick="updateName2(this)" class="${isSelected}">${specialty}</li>`;
         options2.insertAdjacentHTML("beforeend", li);
     });
 }
-addSpecialty();
 
 function updateName2(selectedLi) {
     searchInp2.value = "";
@@ -92,14 +112,18 @@ function updateName2(selectedLi) {
 searchInp2.addEventListener("keyup", () => {
     let arr = [];
     let searchWord2 = searchInp2.value.toLowerCase();
-    arr = specialties.filter(data => {
-        return data.toLowerCase().startsWith(searchWord2);
-    }).map(data => {
-        let isSelected = data == selectBtn2.firstElementChild.innerText ? "selected" : "";
+    arr = specialties
+    .filter(data => data.toLowerCase().startsWith(searchWord2))
+    .map(data => {
+        let isSelected = data === searchInp2.value ? "selected" : "";
         return `<li onclick="updateName2(this)" class="${isSelected}">${data}</li>`;
-    }).join("");
-    options2.innerHTML = arr ? arr : `<p style="margin-top: 10px; color:#1a4965;">Oops! Specialty not found</p>`;
+    })
+    .join("");
+    options2.innerHTML = arr
+    ? arr
+    : `<p style="margin-top: 10px; color:#1a4965;">Oops! Specialty not found</p>`;
 });
 
 selectBtn2.addEventListener("click", () => wrapper2.classList.toggle("active"));
+addSpecialty("");
 

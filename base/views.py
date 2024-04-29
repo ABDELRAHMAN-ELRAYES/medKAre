@@ -72,35 +72,37 @@ def contactus(request,user_id):
         messageid=int(uuid.uuid4().hex[:8], 16)
         messageid%=100000
         message = Message.objects.create(user=user,message_id=messageid, message_description=message_box)
-    # return redirect('contactus', user_id=user_id)
-    # user = User.objects.get(user_id=user_id)
     return render(request, 'contactUs.html', {'user': user})
 
-
-
-# def sendMessage(request,user_id):
-#     user = User.objects.get(user_id=user_id)
-#     messageBox=request.POST['message-box']
-#     message=Message(user=user_id,message_id=4,message_description=messageBox)
-#     message.save()
-#     return redirect('contactus')
 
     
 def doctorbooking(request,user_id):
     user = User.objects.get(user_id=user_id)
     
-    # if request.method == 'POST':
-    #     message_box = request.POST.get('message-box', '')
-    #     messageid=int(uuid.uuid4().hex[:8], 16)
-    #     messageid%=100000
-    #     message = Message.objects.create(user=user,message_id=messageid, message_description=message_box)
-
-    # user = User.objects.get(user_id=user_id)
+    if request.method == 'POST':
+        doctor_name = request.POST.get('doctor_name')
+        fname,lname=doctor_name.split()
+        doctor=Doctor.objects.get(doctor_fname=fname.lower())
+        appointmentDate=request.POST['date']
+        appointmentTime=request.POST['time']
+        illnessDescription=request.POST['description']
+        appointment=DoctorAppointment(user=user,doctor=doctor,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        appointment.save()
     return render(request, 'doctorBooking.html', {'user': user})
 
 
 def nursebooking(request,user_id):
     user = User.objects.get(user_id=user_id)
+    
+    if request.method == 'POST':
+        nurse_name = request.POST.get('nurse_name')
+        fname,lname=nurse_name.split()
+        nurse=Nurse.objects.get(nurse_fname=fname.lower())
+        appointmentDate=request.POST['date']
+        appointmentTime=request.POST['time']
+        illnessDescription=request.POST['description']
+        appointment=NurseAppointment(user=user,nurse=nurse,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        appointment.save()
     return render(request, 'nurseBooking.html', {'user': user})
 
 def sanatoriumbooking(request,user_id):
@@ -109,9 +111,10 @@ def sanatoriumbooking(request,user_id):
 
 def profile(request,user_id):
     user = User.objects.get(user_id=user_id)
-    appointments=DoctorAppointment.objects.filter(user=user).select_related('doctor')
+    doctorappointments=DoctorAppointment.objects.filter(user=user).select_related('doctor')
+    nurseappointments=NurseAppointment.objects.filter(user=user).select_related('nurse')
     messages=Message.objects.filter(user=user)
-    return render(request, 'profile.html', {'user': user, 'appointments':appointments,'messages':messages})
+    return render(request, 'profile.html', {'user': user, 'doctorappointments':doctorappointments,'messages':messages, 'nurseappointments':nurseappointments})
 
 def treatment(request,user_id):
     user = User.objects.get(user_id=user_id)

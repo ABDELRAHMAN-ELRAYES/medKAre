@@ -80,31 +80,36 @@
             <div class="info-side">
                 <div class="first-sen">Book With Us Now</div>
                 <div class="second-sen">Book a Nurse</div>
-                <div class="input-div">
-                    <div class="full-name">
-                        <div class="info-div">
-                            <input type="text" id="first-name" placeholder="First name:" name="first name">
-                            <i class="fa-solid fa-user"></i>
+                <form action="{%url 'nursebooking' user.user_id%}" method="post" class="input-div" id="booking-form">
+                    {% csrf_token %}
+                        <div class="full-name">
+                            <div class="info-div">
+                                <input type="text" id="firstname" placeholder="First name:" name="firstname" required>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="info-div">
+                                <input type="text" id="lastname" placeholder="Last name:" name="lastname" required>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
                         </div>
                         <div class="info-div">
-                            <input type="text" id="last-name" placeholder="Last name:" name="last name">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                    </div>
-                        <div class="info-div">
-                            <input type="email" id="email" placeholder="Email address:" name="email">
+                            <input type="email" id="email" placeholder="Email address:" name="email" required>
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div class="info-div">
-                            <input type="text" id="phone" placeholder="Phone number:" name="phone">
+                            <input type="text" id="phone" placeholder="Phone number:" name="phone" required>
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div class="info-div" id="date-div" >
-                            <input type="date" id="date" placeholder="Select the date">
+                            <input type="date" id="date" name="date" placeholder="Select the date" required>
+                        </div>
+                        <div class="info-div" id="time-div" >
+                            <input type="time" name="time" id="time" required>
+                            <!-- <input type="text" id="age" placeholder="Age:" name="age"> -->
                         </div>
                         <div class="info-div">
-                            <input type="text" id="address" placeholder="address:" name="address">
-                            <i class="fa-solid fa-phone"></i>
+                            <input type="text" id="address" placeholder="address:" name="address" required>
+                            <i class="fa-solid fa-location-dot"></i>
                         </div>
                         <div class="wrapper wrapper1">
                             <div class="select-btn select-btn1">
@@ -119,8 +124,9 @@
                                 <ul class="options options1"></ul>
                             </div>
                         </div>
-                    <button>Send Now</button>
-                </div>
+                        <textarea cols="40" rows="10" aria-invalid="false" placeholder="Describe Your illness" name="description" id="description" required></textarea>
+                    <button type="submit">Send Now</button>
+                </form>
             </div>
             <div class="img-side">
                 <img src="{%static '/images/nurseBooking.svg'%}" alt="">

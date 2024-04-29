@@ -28,17 +28,17 @@ class Doctor(models.Model):
 
 
 class DoctorAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, doctor_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, doctor_id) found, that is not supported. The first column is selected.
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)                            #all relationships was(models.DO_NOTHING)
-    appointment_status = models.CharField(max_length=64, blank=True, null=True)
-    appointment_date = models.DateField(blank=True, null=True)
-    appointment_time = models.TimeField(blank=True, null=True)
+    appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
+    appointment_date = models.DateField(blank=True, null=False, primary_key=True)
+    appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'doctor_appointment'
-        unique_together = (('user', 'doctor'),)
+        unique_together = (('appointment_date', 'appointment_time'),)
 
 
 class DoctorSpecialization(models.Model):
@@ -54,6 +54,7 @@ class Medicine(models.Model):
     user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, medicine_id) found, that is not supported. The first column is selected.
     medicine_id = models.IntegerField()
     medicine_istaken = models.CharField(db_column='medicine_isTaken', max_length=64, blank=True, null=True)  # Field name made lowercase.
+    medicine_name = models.CharField(max_length=64, blank=True, null=True)
     medicine_description = models.TextField(blank=True, null=True)
     medicine_intaketime = models.TimeField(db_column='medicine_inTakeTime', blank=True, null=True)  # Field name made lowercase.
 
@@ -68,8 +69,8 @@ class Message(models.Model):
     message_id = models.IntegerField()
     message_description = models.TextField(blank=True, null=True)
     egypt_timezone = pytz.timezone('Africa/Cairo')
-    message_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone))
-    message_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone).time())
+    message_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone))    #
+    message_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone).time())                               #
     class Meta:
         managed = False
         db_table = 'message'
@@ -92,17 +93,17 @@ class Nurse(models.Model):
 
 
 class NurseAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, nurse_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, nurse_id) found, that is not supported. The first column is selected.
     nurse = models.ForeignKey(Nurse, on_delete=models.CASCADE)
-    appointment_status = models.CharField(max_length=64, blank=True, null=True)
-    appointment_date = models.DateField(blank=True, null=True)
-    appointment_time = models.TimeField(blank=True, null=True)
+    appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
+    appointment_date = models.DateField(blank=True, null=False, primary_key=True)
+    appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'nurse_appointment'
-        unique_together = (('user', 'nurse'),)
+        unique_together = (('appointment_date', 'appointment_time'),)
 
 
 class Sanatorium(models.Model):
@@ -121,17 +122,17 @@ class Sanatorium(models.Model):
 
 
 class SanatoriumAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, sanatorium_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, sanatorium_id) found, that is not supported. The first column is selected.
     sanatorium = models.ForeignKey(Sanatorium, on_delete=models.CASCADE)
-    appointment_status = models.CharField(max_length=64, blank=True, null=True)
-    appointment_date = models.DateField(blank=True, null=True)
-    appointment_time = models.TimeField(blank=True, null=True)
+    appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
+    appointment_date = models.DateField(blank=True, null=False, primary_key=True)
+    appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'sanatorium_appointment'
-        unique_together = (('user', 'sanatorium'),)
+        unique_together = (('appointment_date', 'appointment_time'),)
 
 
 class User(models.Model):

@@ -555,6 +555,20 @@ a{
     border-radius: 8px;
     background-color: transparent;
 }
+.info-side textarea{
+    resize:none;
+    border-radius:8px ;
+    outline: none;
+    border:none;
+    padding: 15px 10px 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.03) 1px 1px 45px 4px;
+    height: 120px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.info-side textarea:focus{
+    border:1px solid var(--logo-color);
+}
 
 input[type="date"]{
     width: 100%;
@@ -572,9 +586,26 @@ input[type="date"]::-webkit-calendar-picker-popup {
     border: 1px solid #ccc; 
     border-radius: 4px;
 }
-#date-div{
+#date-div,#time-div{
     display: flex;
     padding-right: 18px;
+}
+
+input[type="time"]{
+    width: 100%;
+    color: #757575;   
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(20%);
+    color: #757575;
+}
+
+input[type="time"]::-webkit-calendar-picker-popup {
+    width: 250px; 
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc; 
+    border-radius: 4px;
 }
 .doctor-specialty{
     display: grid;

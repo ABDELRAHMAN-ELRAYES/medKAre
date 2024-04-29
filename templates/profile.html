@@ -127,7 +127,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for appointment in appointments %}
+                                    {% for appointment in doctorappointments %}
                                         <tr>
                                             <td>doctor</td>
                                             <td>{{appointment.doctor.doctor_fname}} {{appointment.doctor.doctor_lname}}</td>
@@ -136,6 +136,17 @@
                                             <td>{{ appointment.appointment_time }}</td>
                                             <td>{{ appointment.appointment_status }}</td>
                                             <td>{{ appointment.doctor.doctor_city }} {{ appointment.doctor.doctor_street }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    {% for appointment in nurseappointments %}
+                                        <tr>
+                                            <td>nurse</td>
+                                            <td>{{appointment.nurse.nurse_fname}} {{appointment.nurse.nurse_lname}}</td>
+                                            <td>{{ appointment.illness_description }}</td>
+                                            <td>{{ appointment.appointment_date }}</td>
+                                            <td>{{ appointment.appointment_time }}</td>
+                                            <td>{{ appointment.appointment_status }}</td>
+                                            <td>{{ user.user_city }} {{ user.user_street }}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>
