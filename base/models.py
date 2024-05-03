@@ -11,6 +11,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 import pytz
 
+cairo_timezone = pytz.timezone('Africa/Cairo')
+
 class Doctor(models.Model):
     doctor_id = models.IntegerField(primary_key=True)
     doctor_fname = models.CharField(db_column='doctor_Fname', max_length=64, blank=True, null=True)  # Field name made lowercase.
@@ -51,13 +53,15 @@ class DoctorSpecialization(models.Model):
 
 
 class Medicine(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, medicine_id) found, that is not supported. The first column is selected.
-    medicine_id = models.IntegerField()
-    medicine_istaken = models.CharField(db_column='medicine_isTaken', max_length=64, blank=True, null=True)  # Field name made lowercase.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, medicine_id) found, that is not supported. The first column is selected.
+    medicine_id = models.IntegerField(primary_key=True,null=False)
+    medicine_istaken = models.CharField(db_column='medicine_isTaken', max_length=64, blank=True, null=True,default='untaken')  # Field name made lowercase.
     medicine_name = models.CharField(max_length=64, blank=True, null=True)
     medicine_description = models.TextField(blank=True, null=True)
-    medicine_intaketime = models.TimeField(db_column='medicine_inTakeTime', blank=True, null=True)  # Field name made lowercase.
+    # medicine_intaketime = models.TimeField(db_column='medicine_inTakeTime', blank=True, null=True)  # Field name made lowercase.
 
+    medicine_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(cairo_timezone).date())    #
+    medicine_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(cairo_timezone).time())  
     class Meta:
         managed = False
         db_table = 'medicine'

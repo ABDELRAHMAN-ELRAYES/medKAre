@@ -1,8 +1,9 @@
-from django.shortcuts import render ,redirect
+from django.shortcuts import render ,redirect ,get_object_or_404
 from django.contrib.auth import authenticate ,login ,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import uuid
+from django.db import transaction
 
 from .models import User
 from .models import Doctor
@@ -129,7 +130,38 @@ def profile(request,user_id):
 
 def treatment(request,user_id):
     user = User.objects.get(user_id=user_id)
-    return render(request, 'treatment.html', {'user': user})
+    if request.method=='POST':
+        medicineName=request.POST.get('medicine-name')
+        medicineDescription=request.POST.get('medicine-description')
+        medicineid=int(uuid.uuid4().hex[:8], 16) %100000
+        if medicineName and medicineDescription:
+            medicine = Medicine(user=user,medicine_id=medicineid, medicine_name=medicineName, medicine_description=medicineDescription)
+            medicine.save()
+        return redirect('treatment', user_id=user.user_id)
+    treatments=Medicine.objects.filter(user=user)
+    return render(request, 'treatment.html', {'user': user,'treatments':treatments})
+
+def deleteTreatment(request,medicine_id,user_id):
+    medicine=get_object_or_404(Medicine,pk=medicine_id)
+    if request.method=='POST':
+        medicine.delete()
+        return redirect('treatment', user_id=user_id)
+    else:
+        pass
+
+def takenTreatment(request,medicine_id,user_id):
+    medicine = get_object_or_404(Medicine, pk=medicine_id)
+    if request.method == 'POST':
+        medicine.medicine_istaken = 'taken'
+        medicine.save()
+    return redirect('treatment', user_id=user_id)
+
+def untakenTreatment(request,medicine_id,user_id):
+    medicine = get_object_or_404(Medicine, pk=medicine_id)
+    if request.method == 'POST':
+        medicine.medicine_istaken = 'untaken'
+        medicine.save()
+    return redirect('treatment', user_id=user_id)
 
 def videos(request,user_id):
     user = User.objects.get(user_id=user_id)

@@ -404,11 +404,11 @@ a{
     /* height: 80%;; */
     height: fit-content;
 }
-/* .info-side{
-    display: grid;
-    height: 100%;
-    grid-template-rows: 4% 12% 63%;
-} */
+.info-side{
+    border: 2px solid var(--logo-color);
+    border-radius: 8px;
+    padding: 50px;
+}
 .inner-info-side{
     display: grid;
     grid-template-columns: repeat(2,48%);

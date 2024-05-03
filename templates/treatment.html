@@ -85,16 +85,17 @@
                                 <p></p>
                                 <i class="fa-solid fa-xmark"></i>
                             </header>
-                        <form action="#">
+                        <form action="{%url 'treatment' user.user_id%}" method="post">
+                            {% csrf_token %}
                             <div class="row title">
                                 <label>Title</label>
-                                <input type="text" spellcheck="false">
+                                <input type="text" name="medicine-name" id="medicine-name" spellcheck="false" required>
                             </div>
                             <div class="row description">
                                 <label>Description</label>
-                                <textarea spellcheck="false"></textarea>
+                                <textarea  name="medicine-description" id="medicine-description" spellcheck="false" required></textarea>
                             </div>
-                            <button></button>
+                            <button type="submit"></button>
                         </form>
                     </div>
                 </div>
@@ -106,6 +107,40 @@
                     </div>
                     <p>Add new Medicine</p>
                 </li>
+                {% for treatment in treatments %}
+                        <li class="medicine {{treatment.medicine_istaken}}">
+                            <div class="details">
+                                <p>{{treatment.medicine_name}}</p>
+                                <span>{{treatment.medicine_description}}</span>
+                            </div>
+                            <div class="bottom-content">
+                                    <span>{{treatment.medicine_date}}</span>
+                                    <div class="settings">
+                                        <i onclick="showMenu(this)" class="fa-solid fa-ellipsis set-icon"></i>
+                                        <ul class="menu">
+                                            <form action="{% url 'deleteTreatment' user.user_id treatment.medicine_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <li >
+                                                    <i class="fa-solid fa-trash in-icon"></i>
+                                                    <button type="submit" class="in-btn">Delete</button>
+                                                </li>
+                                            </form>
+                                            <form action="{% url 'untakenTreatment' user.user_id treatment.medicine_id %}" method="POST">
+                                                {% csrf_token %}
+                                                <li>
+                                                    <i class="fa-solid fa-xmark in-icon"></i>
+                                                    <button type="submit" class="in-btn">unTaken</button>
+                                                </li>
+                                            </form>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <form action="{% url 'takenTreatment' user.user_id treatment.medicine_id %}" method="POST" class="confirmed-btn">
+                                {% csrf_token %}
+                                    <button type="submit">Taken</button>
+                            </form>
+                        </li>
+                {% endfor %}
             </div>
         </div>
     </div>

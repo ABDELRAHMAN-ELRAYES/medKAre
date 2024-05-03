@@ -403,6 +403,7 @@ a{
     color: var(--logo-color);
     display: flex;
     align-items: center;
+    padding-left: 87px;
 }
 .treatment-main .mid-treatment .note i{
     font-size: 34px;
@@ -435,6 +436,7 @@ a{
     display: grid;
     gap: 25px;
     grid-template-columns: repeat(auto-fill, 265px);
+    justify-content: center;
 }   
 .wrapper li{
     height: 250px;
@@ -468,7 +470,8 @@ a{
     color: #88ABFF;
     font-weight: 500;
     margin-top: 20px;
-}   
+}
+
 .medicine{
     display: flex;
     flex-direction: column;
@@ -560,6 +563,13 @@ a{
 }
 .menu li i{
     padding-right: 8px;
+}
+.in-btn{
+    background-color: transparent;
+    color: #6D6D6D;
+    height: 25px;
+    font-size: 16px;
+
 }
 .popup-box{
     position: fixed;
@@ -665,6 +675,25 @@ form button{
 }
 .confirmed-btn button:hover{
     transform: translateY(5px);
+}
+
+
+.wrapper .taken{
+    color: rgb(26, 73, 101);
+    background-color: rgb(99, 136, 137);
+}
+.taken .details span{
+    color: white;
+}
+.taken .bottom-content span,.taken .bottom-content .settings .set-icon{
+    color:white;
+}
+.taken .confirmed-btn button{
+    background-color: white;
+    color:rgb(38, 80, 115);
+}
+.taken .settings .in-icon{
+    color: #6D6D6D;
 }
 /* @media (max-width: 660px){
     .wrapper{

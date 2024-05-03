@@ -13,7 +13,10 @@ urlpatterns=[
     path('nursebooking/<int:user_id>/',views.nursebooking,name='nursebooking'),
     path('profile/<int:user_id>/doctorappointments/messages/nurseappointments/sanatoriumappointments/',views.profile,name='profile'),
     path('sanatoriumbooking/<int:user_id>/',views.sanatoriumbooking,name='sanatoriumbooking'),
-    path('treatment/<int:user_id>/',views.treatment,name='treatment'),
+    path('treatment/<int:user_id>/treatments/',views.treatment,name='treatment'),
+    path('treatment/<int:user_id>/<int:medicine_id>/delete/',views.deleteTreatment,name='deleteTreatment'),
+    path('treatment/<int:user_id>/<int:medicine_id>/update/',views.takenTreatment,name='takenTreatment'),
+    path('treatment/<int:user_id>/<int:medicine_id>/unupdate/',views.untakenTreatment,name='untakenTreatment'),
     path('videos/<int:user_id>/',views.videos,name='videos'),
     path('signup/',views.signup,name='signup'),
 
