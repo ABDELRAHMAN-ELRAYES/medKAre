@@ -407,11 +407,15 @@ a{
     transition: 0.5s;
 }
 .inner-img:hover{
-    background-color: white;
+    /* background-color: white; */
     border:none;
     transform: scale(1.1);
     box-shadow: rgb(0 0 0 / 22%) 10px -3px 31px 12px;
     /* box-shadow: rgba(0, 0, 0, 0.03) 1px 1px 45px 4px; */
+}
+.inner-img:hover .book-cover{
+    height: 100%;
+    width: 100%;
 }
 .book-cover{
     background-position: top center;
@@ -420,6 +424,7 @@ a{
     height: 93%;
     width: 90%;
     border-radius: 10px;
+    transition:0.4s;
 }
 .inner-img .cover1{
 
@@ -443,7 +448,18 @@ a{
 .cover7{
     background-image: url(../images/book7.jpg);
 }
-
+.cover8{
+    background-image: url(../images/book8.jpg);
+}
+.cover9{
+    background-image: url(../images/book9.jpg);
+}
+.cover10{
+    background-image: url(../images/book10.jpg);
+}
+.cover11{
+    background-image: url(../images/book11.jpg);
+}
 .info-side h1{
     font-size: 45px;
     font-weight: 500;

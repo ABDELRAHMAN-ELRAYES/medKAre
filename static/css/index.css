@@ -489,7 +489,7 @@ img{
 }
 .card {
     background: #fff;
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .mid-news-blogs{
@@ -508,26 +508,29 @@ img{
     width: 400px;
     height: 450px;
     background-color: white;
-    padding: 13px 13px 30px;
-    border-radius: 15px;
+    /* padding: 13px 13px 30px; */
+    /* border-radius: 15px; */
 }
 .img-box{
     width:100%;
     height: 196px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     margin-bottom: 30px;
     transition: 0.3s ease-in-out;
 }
-.img-box:hover{
+/* .img-box:hover{
     transform: translateY(5px);
-}
+} */
 .img-box img{
-    border-radius: 15px;
+    border-radius: 0px;
     object-fit: fill;
 }
 .date{
     margin-bottom:10px;
     color:var(--btnAfter);
+}
+.info-box {
+    padding: 15px;
 }
 .info-box h5{
     font-size: 16px;
