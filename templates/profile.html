@@ -143,7 +143,7 @@
                                             <td>{{ appointment.appointment_date }}</td>
                                             <td>{{ appointment.appointment_time }}</td>
                                             <td>{{ appointment.appointment_status }}</td>
-                                            <td>{{ appointment.doctor.doctor_city }} {{ appointment.doctor.doctor_street }}</td>
+                                            <td>{{ appointment.appointment_address }}</td>
                                         </tr>
                                     {% endfor %}
                                     {% for appointment in nurseappointments %}
@@ -154,7 +154,7 @@
                                             <td>{{ appointment.appointment_date }}</td>
                                             <td>{{ appointment.appointment_time }}</td>
                                             <td>{{ appointment.appointment_status }}</td>
-                                            <td>{{ user.user_city }} {{ user.user_street }}</td>
+                                            <td>{{appointment.appointment_address}}</td>
                                         </tr>
                                     {% endfor %}
                                     {% for appointment in sanatoriumappointments %}
@@ -165,7 +165,7 @@
                                             <td>{{ appointment.appointment_date }}</td>
                                             <td>{{ appointment.appointment_time }}</td>
                                             <td>{{ appointment.appointment_status }}</td>
-                                            <td>{{ user.user_city }} {{ user.user_street }}</td>
+                                            <td>{{appointment.appointment_address}}</td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>

@@ -36,6 +36,7 @@ class DoctorAppointment(models.Model):
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
     appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
+    appointment_address = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -103,6 +104,7 @@ class NurseAppointment(models.Model):
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
     appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
+    appointment_address = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -132,6 +134,7 @@ class SanatoriumAppointment(models.Model):
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
     appointment_time = models.TimeField(blank=True, null=False)
     illness_description = models.TextField(blank=True, null=True)
+    appointment_address = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = False

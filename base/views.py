@@ -87,7 +87,8 @@ def doctorbooking(request,user_id):
         appointmentDate=request.POST['date']
         appointmentTime=request.POST['time']
         illnessDescription=request.POST['description']
-        appointment=DoctorAppointment(user=user,doctor=doctor,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        address=request.POST['address']
+        appointment=DoctorAppointment(user=user,doctor=doctor,appointment_date=appointmentDate,appointment_address=address,appointment_time=appointmentTime,illness_description=illnessDescription)
         appointment.save()
     return render(request, 'doctorBooking.html', {'user': user})
 
@@ -102,7 +103,8 @@ def nursebooking(request,user_id):
         appointmentDate=request.POST['date']
         appointmentTime=request.POST['time']
         illnessDescription=request.POST['description']
-        appointment=NurseAppointment(user=user,nurse=nurse,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        address=request.POST['address']
+        appointment=NurseAppointment(user=user,nurse=nurse,appointment_date=appointmentDate,appointment_address=address,appointment_time=appointmentTime,illness_description=illnessDescription)
         appointment.save()
     return render(request, 'nurseBooking.html', {'user': user})
 
@@ -115,7 +117,8 @@ def sanatoriumbooking(request,user_id):
         appointmentDate=request.POST['date']
         appointmentTime=request.POST['time']
         illnessDescription=request.POST['message']
-        appointment=SanatoriumAppointment(user=user,sanatorium=sanatorium,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
+        address=request.POST['address']
+        appointment=SanatoriumAppointment(user=user,sanatorium=sanatorium,appointment_address=address,appointment_date=appointmentDate,appointment_time=appointmentTime,illness_description=illnessDescription)
         appointment.save()
 
     return render(request, 'sanatoriumBooking.html', {'user': user})
