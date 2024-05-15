@@ -11,26 +11,6 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 
-
-// document.getElementById('signup-btn').addEventListener('click', function() {
-//   var pass = document.getElementById('password').value;
-//   var passCnfrm = document.getElementById('cnfrmpassword').value;
-//   var msg=document.getElementById('signup-message');
-//   if(pass.length != 0 ){
-//     if (pass === passCnfrm) {
-//       msg.textContent="Passwords Match";
-//       msg.style.backgroundColor="#3ae374";
-//     } else {
-//       msg.textContent="Password Are Not Match";
-//       msg.style.backgroundColor="#FF4D4D";
-//     }
-//   }else{
-//     msg.textContent="Password can't be Empty!";
-//     msg.style.backgroundColor="#FF4D4D";
-//   }
-  
-// });
-
 document.addEventListener('DOMContentLoaded', function() {
   const passwordInput = document.getElementById('password');
   const confirmPasswordInput = document.getElementById('cnfrmpassword');

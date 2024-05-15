@@ -108,6 +108,7 @@ def nursebooking(request,user_id):
         appointment.save()
     return render(request, 'nurseBooking.html', {'user': user})
 
+
 def sanatoriumbooking(request,user_id):
     user = User.objects.get(user_id=user_id)
     

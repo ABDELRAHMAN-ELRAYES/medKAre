@@ -88,6 +88,8 @@ body,input {
     font-size: 40px;
     display: grid;
     grid-template-columns: 10% 46%;
+    text-shadow: 6px 6px 10px rgb(6 47 71 / 93%);
+    column-gap: 15px;
 }
 .logo h2{
     font-weight: 950;
@@ -256,11 +258,13 @@ a{
 .footer-logo{
     display: grid;
     grid-template-rows: 24% 35% 15%;
+    
 }
 .footer-logo .logo{
     text-align: center;
     display: flex;
     width: 80%;
+    text-shadow: 6px 6px 10px rgb(6 47 71 / 93%);
 }
 .footer-logo h2{
     font-weight: 200;

@@ -7,9 +7,10 @@ descTag = popupBox.querySelector("textarea"),
 addBtn = popupBox.querySelector("button"),
 confirmedTakenBtn=popupBox.querySelector(".confirmed-btn button");
 
-const months = ["January", "February", "March", "April", "May", "June", "July",
-                "August", "September", "October", "November", "December"];
-const Medicine = JSON.parse(localStorage.getItem("Medicine") || "[]");
+// const months = ["January", "February", "March", "April", "May", "June", "July",
+//                 "August", "September", "October", "November", "December"];
+// const Medicine = JSON.parse(localStorage.getItem("Medicine") || "[]");
+
 let isUpdate = false, updateId;
 
 addBox.addEventListener("click", () => {

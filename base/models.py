@@ -15,8 +15,8 @@ cairo_timezone = pytz.timezone('Africa/Cairo')
 
 class Doctor(models.Model):
     doctor_id = models.IntegerField(primary_key=True)
-    doctor_fname = models.CharField(db_column='doctor_Fname', max_length=64, blank=True, null=True)  # Field name made lowercase.
-    doctor_lname = models.CharField(db_column='doctor_Lname', max_length=64, blank=True, null=True)  # Field name made lowercase.
+    doctor_fname = models.CharField(db_column='doctor_Fname', max_length=64, blank=True, null=True) 
+    doctor_lname = models.CharField(db_column='doctor_Lname', max_length=64, blank=True, null=True)  
     doctor_phone = models.CharField(max_length=64, blank=True, null=True)
     doctor_street = models.CharField(max_length=64, blank=True, null=True)
     doctor_city = models.CharField(max_length=64, blank=True, null=True)
@@ -30,8 +30,8 @@ class Doctor(models.Model):
 
 
 class DoctorAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, doctor_id) found, that is not supported. The first column is selected.
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)                            #all relationships was(models.DO_NOTHING)
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)                            
     appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
     appointment_time = models.TimeField(blank=True, null=False)
@@ -54,14 +54,13 @@ class DoctorSpecialization(models.Model):
 
 
 class Medicine(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, medicine_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  
     medicine_id = models.IntegerField(primary_key=True,null=False)
-    medicine_istaken = models.CharField(db_column='medicine_isTaken', max_length=64, blank=True, null=True,default='untaken')  # Field name made lowercase.
+    medicine_istaken = models.CharField(db_column='medicine_isTaken', max_length=64, blank=True, null=True,default='untaken')  
     medicine_name = models.CharField(max_length=64, blank=True, null=True)
     medicine_description = models.TextField(blank=True, null=True)
-    # medicine_intaketime = models.TimeField(db_column='medicine_inTakeTime', blank=True, null=True)  # Field name made lowercase.
 
-    medicine_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(cairo_timezone).date())    #
+    medicine_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(cairo_timezone).date())    
     medicine_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(cairo_timezone).time())  
     class Meta:
         managed = False
@@ -70,12 +69,12 @@ class Medicine(models.Model):
 
 
 class Message(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  # The composite primary key (user_id, message_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE, primary_key=True)  
     message_id = models.IntegerField()
     message_description = models.TextField(blank=True, null=True)
     egypt_timezone = pytz.timezone('Africa/Cairo')
     message_date = models.DateField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone))    #
-    message_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone).time())                               #
+    message_time = models.TimeField(blank=True, null=True, default=timezone.now().astimezone(egypt_timezone).time())                               
     class Meta:
         managed = False
         db_table = 'message'
@@ -84,8 +83,8 @@ class Message(models.Model):
 
 class Nurse(models.Model):
     nurse_id = models.IntegerField(primary_key=True)
-    nurse_fname = models.CharField(db_column='nurse_Fname', max_length=64, blank=True, null=True)  # Field name made lowercase.
-    nurse_lname = models.CharField(db_column='nurse_Lname', max_length=64, blank=True, null=True)  # Field name made lowercase.
+    nurse_fname = models.CharField(db_column='nurse_Fname', max_length=64, blank=True, null=True) 
+    nurse_lname = models.CharField(db_column='nurse_Lname', max_length=64, blank=True, null=True)  
     nurse_phone = models.CharField(max_length=64, blank=True, null=True)
     nurse_gender = models.CharField(max_length=64, blank=True, null=True)
     nurse_username = models.CharField(unique=True, max_length=64)
@@ -98,7 +97,7 @@ class Nurse(models.Model):
 
 
 class NurseAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, nurse_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE) 
     nurse = models.ForeignKey(Nurse, on_delete=models.CASCADE)
     appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
@@ -128,7 +127,7 @@ class Sanatorium(models.Model):
 
 
 class SanatoriumAppointment(models.Model):
-    user = models.OneToOneField('User', on_delete=models.CASCADE)  # The composite primary key (user_id, sanatorium_id) found, that is not supported. The first column is selected.
+    user = models.OneToOneField('User', on_delete=models.CASCADE)  
     sanatorium = models.ForeignKey(Sanatorium, on_delete=models.CASCADE)
     appointment_status = models.CharField(max_length=64, blank=True, null=True,default='scheduled')
     appointment_date = models.DateField(blank=True, null=False, primary_key=True)
@@ -144,9 +143,9 @@ class SanatoriumAppointment(models.Model):
 
 class User(models.Model):
     user_id = models.IntegerField(primary_key=True)
-    user_fname = models.CharField(db_column='user_Fname', max_length=64, blank=True, null=True)  # Field name made lowercase.
-    user_lname = models.CharField(db_column='user_Lname', max_length=64, blank=True, null=True)  # Field name made lowercase.
-    user_ssn = models.CharField(db_column='user_SSN', max_length=64, blank=True, null=True)  # Field name made lowercase.
+    user_fname = models.CharField(db_column='user_Fname', max_length=64, blank=True, null=True) 
+    user_lname = models.CharField(db_column='user_Lname', max_length=64, blank=True, null=True)  
+    user_ssn = models.CharField(db_column='user_SSN', max_length=64, blank=True, null=True)  
     user_birthdate = models.CharField(max_length=64, blank=True, null=True)
     user_phone = models.CharField(unique=True, max_length=64, blank=True, null=True)
     user_street = models.CharField(max_length=64, blank=True, null=True)

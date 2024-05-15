@@ -148,6 +148,9 @@ input[type="date"] {
     color:#aaa;
     font-weight: 500;
 }
+#error-message{
+    color:red;
+}
 #signup-message{
     border: 5px;
     height: 27px;
